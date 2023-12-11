@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-import { NavBar } from './components/NavBar';
 import { LocationSearch } from './components/LocationSearch';
 import { HomePage } from './pages/HomePage'
 import { LocationPage } from './pages/LocationPage'
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
 function App() {
   return (
