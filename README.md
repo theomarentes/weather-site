@@ -1,6 +1,7 @@
 # WeatherWizards Weather app
 
 - Goals
+        
         - [] Search functionality
             - [] Create working search by city
             - [] Create working search by post code

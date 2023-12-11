@@ -9,7 +9,6 @@ import { LocationPage } from './pages/LocationPage'
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path=":city" element={<LocationPage />} />
