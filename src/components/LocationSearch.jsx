@@ -7,12 +7,13 @@ export function LocationSearch(){
 	let [locationSearchData, setLocationSearchData] = useState("brisbane");
 
 	const searchLocation = async () => {
-		let response = await fetch(url + "?apikey=E6q223AkLYY15gGXrVPo4G7gQmHvI7IJ&q=" + locationSearchData)
+		let response = await fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + locationSearchData+ "&appid=f273554cca7d7e91aa70a108b0f4bf3e")
 		let data = await response.json();
+
+        let response2 = await fetch("https://api.openweathermap.org/data/3.0/onecall?lat="+data[0].lat+"&lon="+data[0].lon+"&appid=f273554cca7d7e91aa70a108b0f4bf3e")
+        let data2 = await response2.json()
 		
-		let response2 = await fetch("http://dataservice.accuweather.com/currentconditions/v1/" + data[0]['Key'] +"?apikey=E6q223AkLYY15gGXrVPo4G7gQmHvI7IJ")
-		let data2 = await response2.json()
-		setWeather(data2[0]);
+        setWeather({data: data2});
 	}
 
 	return(
@@ -26,7 +27,6 @@ export function LocationSearch(){
 				onChange={event => setLocationSearchData(event.target.value)} 
 			/>
 			<button onClick={searchLocation} type="submit">Search</button>
-			{locationSearchData + " temperature is " + weather.Temperature.Metric.Value}
 		</div>
 	)
 
