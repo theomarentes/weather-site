@@ -2,7 +2,6 @@
 // [PokemonObj1, PokemonObj2, PokemonObj3];
 
 import { createContext, useEffect, useState } from "react";
-import { useLocalStorage } from "react-use";
 
 export const WeatherContext = createContext([]);
 
