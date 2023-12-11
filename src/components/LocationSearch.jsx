@@ -2,12 +2,15 @@ import { useContext, useState } from "react";
 import { WeatherContext } from "../contexts/WeatherContext";
 
 export function LocationSearch(){
-	let {url} = "weather url"
+	let {url} = "http://dataservice.accuweather.com/locations/v1/cities/search"
 	let {weather, setWeather} = useContext(WeatherContext);
 	let [locationSearchData, setLocationSearchData] = useState("brisbane");
 
 	const searchLocation = async () => {
-		let response = await fetch(url + locationSearchData);
+		let response = await fetch(url, {headers: {
+			'apikey': 'E6q223AkLYY15gGXrVPo4G7gQmHvI7IJ',
+            'q': locationSearchData
+		}});
 		let data = await response.json();
 		setWeather(data);
 	}
