@@ -1,21 +1,21 @@
+// need to link bootstrap
+
 import React from 'react';
 
 const ForecastCard = ({ day, date, maxTemp, minTemp, image, location }) => {
   return (
-    <div className="forecast-card">
+    <div className="card">
         {/* Template for image */}
-      <img src={require(image)} alt="Weather Image" />    
+      <img src= "../image" className="card-img-top" alt="Weather Image" />
       <div className="card-body">
-        <div className="card-title">
-            {/* City that info is being displayed for */}
-          <div className="location-container">{location}</div>
-          {/* Day and Date */}
-          <div>{`${day} - ${date}`}</div>
-        </div>
-        <div className="card-text">
+        {/* City that info is being displayed for */}
+        <h5 className="card-title">{location}</h5>
+        {/* Day and Date */}
+        <p className="card-text">{`${day} - ${date}`}</p>
+        <p className="card-text">
             {/* Min and Max temps of the day */}
           {`Min: ${minTemp}°F Max: ${maxTemp}°F `}
-        </div>
+        </p>
       </div>
     </div>
   );
