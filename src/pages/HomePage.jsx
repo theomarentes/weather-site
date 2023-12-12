@@ -3,6 +3,7 @@ import { WeatherContext } from "../contexts/WeatherContext";
 import { LocationSearch } from "../components/LocationSearch";
 import { Forecast } from "../components/Forecast";
 import { Header } from "../components/Header";
+import { CurrentWeather } from "../components/CurrentWeather";
 
 export function HomePage(){
 	return(
@@ -10,6 +11,7 @@ export function HomePage(){
         <Header />
 		<LocationSearch	/>
         <Forecast  />
+        <CurrentWeather /> 
 		</>
 	)
 
