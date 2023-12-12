@@ -22,7 +22,7 @@ export function Forecast(){
 
         
                     <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+                        <Card.Img style={{width: 100 +"px"}} variant="top" src={"https://openweathermap.org/img/wn/"+element.weather[0].icon+"@2x.png"} />
                         <Card.Body>
                             <Card.Title>{days[(day+index) % 7]}</Card.Title>
                             <Card.Text>
