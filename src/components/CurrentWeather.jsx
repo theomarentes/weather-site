@@ -8,14 +8,7 @@ export function Forecast(){
 	if (weather.data) {
         return(
         <>
-        {weather.data.daily.map((element, index) => {
-				return <ForecastCard
-					key={1} 
-					data={element.data} 
-			    	/>
-			})}
-            
-            <ForecastCard />
+
         {
             "temperature now is " + weather.data.current.temp +
             "Farenheit... temperature tomorrow is: " + weather.data.daily[0].temp.day
