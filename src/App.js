@@ -4,6 +4,7 @@ import { LocationSearch } from './components/LocationSearch';
 import { HomePage } from './pages/HomePage'
 import { LocationPage } from './pages/LocationPage'
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import 'semantic-ui-css/semantic.min.css'
 
 function App() {
   return(
