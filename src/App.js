@@ -9,6 +9,7 @@ import 'semantic-ui-css/semantic.min.css'
 function App() {
   return(
     <BrowserRouter>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path=":city" element={<LocationPage />} />
