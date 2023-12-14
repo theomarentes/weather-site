@@ -1,4 +1,4 @@
-import Card from 'react-bootstrap/Card';
+import { Card } from 'semantic-ui-react'
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useContext, useState } from "react";
 import { WeatherContext } from "../contexts/WeatherContext";
@@ -7,7 +7,7 @@ function ForecastCard(props) {
 	let {weather, setWeather} = useContext(WeatherContext); 
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card id="forcast_card">
       <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
       <Card.Body>
         <Card.Title>{((weather.data.current.temp - 273.15)) + "°C"} </Card.Title>
