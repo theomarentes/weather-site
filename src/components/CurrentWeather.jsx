@@ -25,7 +25,7 @@ export function CurrentWeather(){
     else {
         return(
             <>
-            <p>loading...</p>
+           
             </>
         )
     }
