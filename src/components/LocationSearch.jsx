@@ -17,8 +17,8 @@ export function LocationSearch(){
 	}
 
 	return(
-		<div>
-			<h5>Enter a location:</h5>
+		<div class="location-search">
+			<h5>Enter a location</h5>
 			<input 
 				type="text" 
 				name="location" 

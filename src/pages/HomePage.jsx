@@ -10,8 +10,8 @@ export function HomePage(){
 		<>
         <Header />
 		<LocationSearch	/>
+		<CurrentWeather /> 
         <Forecast  />
-        <CurrentWeather /> 
 		</>
 	)
 

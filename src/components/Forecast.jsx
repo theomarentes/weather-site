@@ -63,27 +63,30 @@ export function Forecast() {
 
     if (weather.data) {
         return (
-            <div className="weather-container">
-                <h1>Forecast</h1>
-                {weather.data.daily.map((element, index) => (
-                    <Card style={{ width: '18rem' }} key={index}>
-                        <Image src={"https://openweathermap.org/img/wn/" + element.weather[0].icon + "@2x.png"} style={{ width: 100 }} wrapped ui={false} />
-                        <Card.Content>
-                            <Card.Header>{days[(day + index) % 7]}</Card.Header>
-                            <Card.Description>
-                                {element.weather[0].main + " - " + element.weather[0].description}
-                            </Card.Description>
-                        </Card.Content>
-                        <Card.Content extra>
-                            <List>
-                                <List.Item>Min: {Math.round(element.temp.min - 273.15) + "°C"}</List.Item>
-                                <List.Item>Max: {Math.round(element.temp.max - 273.15) + "°C"}</List.Item>
-                                <List.Item>Humidity: {Math.round(element.humidity) + "%"}</List.Item>
-                            </List>
-                        </Card.Content>
-                    </Card>
-                ))}
-            </div>
+            <>
+                <h1 style={{textAlign: "center"}}>Forecast</h1>
+                
+                <div className="weather-container">
+                    {weather.data.daily.map((element, index) => (
+                        <Card style={{ width: '18rem' }} key={index}>
+                            <Image src={"https://openweathermap.org/img/wn/" + element.weather[0].icon + "@2x.png"} style={{ width: 100 }} wrapped ui={false} />
+                            <Card.Content>
+                                <Card.Header>{days[(day + index) % 7]}</Card.Header>
+                                <Card.Description>
+                                    {element.weather[0].main + " - " + element.weather[0].description}
+                                </Card.Description>
+                            </Card.Content>
+                            <Card.Content extra>
+                                <List>
+                                    <List.Item>Min: {Math.round(element.temp.min - 273.15) + "°C"}</List.Item>
+                                    <List.Item>Max: {Math.round(element.temp.max - 273.15) + "°C"}</List.Item>
+                                    <List.Item>Humidity: {Math.round(element.humidity) + "%"}</List.Item>
+                                </List>
+                            </Card.Content>
+                        </Card>
+                    ))}
+                </div>
+            </>
         );
     }
 }
